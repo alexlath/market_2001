@@ -110,4 +110,15 @@ class MarketTest < Minitest::Test
 
     assert_equal [@item1], @market.overstocked_items
   end
+
+  def test_it_can_sort_market_list
+    @market.add_vendor(@vendor1)
+    @market.add_vendor(@vendor2)
+    @market.add_vendor(@vendor3)
+    @vendor3.stock(@item3, 10)
+
+    expected = ["Banana Nice Cream", "Peach", "Peach-Raspberry Nice Cream", "Tomato"]
+
+    assert_equal expected, market.sorted_item_list
+  end
 end
