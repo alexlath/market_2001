@@ -58,6 +58,10 @@ class MarketTest < Minitest::Test
   end
 
   def test_it_can_total_quantity_of_item
+    @market.add_vendor(@vendor1)
+    @market.add_vendor(@vendor2)
+    @market.add_vendor(@vendor3)
+
     assert_equal 100, @market.total_quantity(@item1)
     assert_equal 6, @market.total_quantity(@item2)
   end
