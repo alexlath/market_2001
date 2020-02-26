@@ -20,6 +20,12 @@ class Market
     end
   end
 
+  def list_items
+    inventories = @vendors.map { |vendor| vendor.inventory }
+    items = inventories.flat_map { |inventory| inventory.keys }
+    items.uniq
+  end
+
   def total_quantity(item_param)
     @vendors.sum do |vendor|
       vendor.check_stock(item_param)
