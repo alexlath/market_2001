@@ -57,7 +57,13 @@ class MarketTest < Minitest::Test
     assert_equal [@vendor2], @market.vendors_that_sell(@item4)
   end
 
+  def test_it_can_total_quantity_of_item
+    assert_equal 100, @market.total_quantity(@item1)
+    assert_equal 6, @market.total_quantity(@item2)
+  end
+
   def test_it_can_summarize_total_inventory
+    skip
     @vendor3.stock(@item3, 10)
 
     expected = {
