@@ -13,4 +13,10 @@ class Market
   def vendor_names
     @vendors.map { |vendor| vendor.name }
   end
+
+  def vendors_that_sell(item_param)
+    @vendors.select do |vendor|
+      vendor.check_stock(item_param) > 0
+    end
+  end
 end
