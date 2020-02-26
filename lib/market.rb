@@ -19,4 +19,13 @@ class Market
       vendor.check_stock(item_param) > 0
     end
   end
+
+  def total_quantity(item_param)
+    @vendors.sum do |vendor|
+      vendor.check_stock(item_param)
+    end
+  end
+
+  # def total_inventory
+  # end
 end

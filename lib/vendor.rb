@@ -15,13 +15,6 @@ class Vendor
   end
 
   def potential_revenue
-    # not happy with having to call item[0]
-    # @inventory.reduce(0) do |potential_revenue, item|
-    #   item = item[0]
-    #   potential_revenue += item.price * check_stock(item)
-    #   potential_revenue
-    # end
-
     @inventory.sum do |item|
       item = item[0]
       item.price * check_stock(item)
