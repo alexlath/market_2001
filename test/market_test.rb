@@ -119,6 +119,6 @@ class MarketTest < Minitest::Test
 
     expected = ["Banana Nice Cream", "Peach", "Peach-Raspberry Nice Cream", "Tomato"]
 
-    assert_equal expected, market.sorted_item_list
+    assert_equal expected, @market.sorted_item_list
   end
 end

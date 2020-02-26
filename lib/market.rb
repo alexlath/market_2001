@@ -49,4 +49,9 @@ class Market
       total_quantity(item) > 50
     end
   end
+
+  def sorted_item_list
+    item_names = list_items.map { |item| item.name }
+    item_names.sort
+  end
 end
