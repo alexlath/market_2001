@@ -75,7 +75,9 @@ class MarketTest < Minitest::Test
   end
 
   def test_it_can_summarize_total_inventory
-    skip
+    @market.add_vendor(@vendor1)
+    @market.add_vendor(@vendor2)
+    @market.add_vendor(@vendor3)
     @vendor3.stock(@item3, 10)
 
     expected = {
