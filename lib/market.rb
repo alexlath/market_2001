@@ -42,4 +42,11 @@ class Market
     end
     total_inventory
   end
+
+  def overstocked_items
+    list_items.select do |item|
+      vendors_that_sell(item).length > 1 &&
+      total_quantity(item) > 50
+    end
+  end
 end
