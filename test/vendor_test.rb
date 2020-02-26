@@ -18,4 +18,15 @@ class VendorTest < Minitest::Test
     assert_equal "Rocky Mountain Fresh", @vendor.name
     assert_equal ({}), @vendor.inventory
   end
+
+  def test_it_can_check_stock
+    assert_equal 0, @vendor.check_stock(@item1)
+  end
+
+  def test_it_stock_items
+    skip
+    @vendor.stock(@item1, 30)
+
+    assert_equal ({@item1 => 30}), @vendor.check_stock(@item1)
+  end
 end
